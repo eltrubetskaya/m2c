@@ -1,0 +1,16 @@
+<div id="test-component-wrapper" data-bind="scope: 'testcomponent'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+        {
+        "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "testcomponent": {
+                            "component": "Training_ModuleUi/js/component"
+                        }
+                    }
+                }
+            }
+        }
+</script>

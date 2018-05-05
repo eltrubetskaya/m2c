@@ -1,0 +1,17 @@
+
+<!-- ko if: canBeDisplayed() -->
+<div>
+    Test text <br>
+    Test text <br>
+    Test text <br>
+    Test text <br>
+    Test text <br>
+    Test text <br>
+    Test text <br>
+</div>
+<!-- /ko -->
+
+<!-- ko ifnot: canBeDisplayed() -->
+<div>HIDDEN</div>
+<!-- /ko -->
+<button data-bind="click: clickShowHide">Show/Hide</button>

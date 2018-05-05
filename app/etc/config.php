@@ -122,6 +122,7 @@ return array (
     'Temando_Shipping' => 1,
     'Training_ModuleObserver' => 1,
     'Training_ModulePlugins' => 1,
+    'Training_ModuleUi' => 1,
     'Training_Test' => 1,
     'Training_Test2' => 1,
   ),
