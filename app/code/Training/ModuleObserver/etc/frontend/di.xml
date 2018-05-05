@@ -7,4 +7,9 @@
             <argument name="actionFlag" xsi:type="object"> \Magento\Framework\App\ActionFlag</argument>
         </arguments>
     </type>
+    <type name="Training\ModuleObserver\Observer\LogPageOutput">
+        <arguments>
+            <argument name="logger" xsi:type="object"> \Psr\Log\LoggerInterface</argument>
+        </arguments>
+    </type>
 </config>

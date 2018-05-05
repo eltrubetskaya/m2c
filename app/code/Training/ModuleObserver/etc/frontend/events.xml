@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="controller_action_predispatch">
-        <observer name="training_test" instance="Training\ModuleObserver\Observer\RedirectToProductView" shared="false" />
+        <observer name="training_test_action_predispatch" instance="Training\ModuleObserver\Observer\RedirectToProductView" shared="false" disabled="true" />
+    </event>
+    <event name="controller_front_send_response_before">
+        <observer name="training_test_front_send_response_before" instance="Training\ModuleObserver\Observer\LogPageOutput" shared="false" />
     </event>
 </config>

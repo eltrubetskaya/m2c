@@ -121,7 +121,7 @@ return array (
     'Shopial_Facebook' => 1,
     'Temando_Shipping' => 1,
     'Training_ModuleObserver' => 1,
-    'Training_ModulePlugins' => 0,
+    'Training_ModulePlugins' => 1,
     'Training_Test' => 1,
     'Training_Test2' => 1,
   ),

@@ -2,25 +2,31 @@
 
 namespace Training\ModuleObserver\Observer;
 
-class RedirectToProductView implements \Magento\Framework\Event\ObserverInterface
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\ActionFlag;
+use Magento\Framework\App\Response\RedirectInterface;
+use Magento\Framework\Event\Observer;
+use Magento\Framework\Event\ObserverInterface;
+
+class RedirectToProductView implements ObserverInterface
 {
     /**
-     * @var \Magento\Framework\App\Response\RedirectInterface
+     * @var RedirectInterface
      */
     protected $redirect;
 
     /**
-     * @var \Magento\Framework\App\ActionFlag
+     * @var ActionFlag
      */
     protected $actionFlag;
 
     /**
-     * @param \Magento\Framework\App\Response\RedirectInterface $redirect
-     * @param \Magento\Framework\App\ActionFlag $actionFlag
+     * @param RedirectInterface $redirect
+     * @param ActionFlag $actionFlag
      */
     public function __construct(
-        \Magento\Framework\App\Response\RedirectInterface $redirect,
-        \Magento\Framework\App\ActionFlag $actionFlag
+        RedirectInterface $redirect,
+        ActionFlag $actionFlag
     )
     {
         $this->redirect = $redirect;
@@ -28,15 +34,15 @@ class RedirectToProductView implements \Magento\Framework\Event\ObserverInterfac
     }
 
     /**
-     * @param \Magento\Framework\Event\Observer $observer
+     * @param Observer $observer
      * @return $this
      */
-    public function execute(\Magento\Framework\Event\Observer $observer)
+    public function execute(Observer $observer)
     {
         $request = $observer->getEvent()->getData('request');
         if ($request->getModuleName() !== 'catalog' || $request->getControllerName() !== 'product') {
             $controller = $observer->getData( 'controller_action' );
-            $this->actionFlag->set('', \Magento\Framework\App\Action\Action::FLAG_NO_DISPATCH, true);
+            $this->actionFlag->set('', Action::FLAG_NO_DISPATCH, true);
             $this->redirect->redirect($controller->getResponse(), 'catalog/product/view/id/1');
         }
 
