@@ -120,6 +120,7 @@ return array (
     'Magento_WishlistAnalytics' => 1,
     'Shopial_Facebook' => 1,
     'Temando_Shipping' => 1,
+    'Training_ModuleController' => 1,
     'Training_ModuleObserver' => 1,
     'Training_ModulePlugins' => 1,
     'Training_ModuleRouting' => 1,
